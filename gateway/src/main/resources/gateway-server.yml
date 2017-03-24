@@ -1,0 +1,22 @@
+# Spring properties
+spring:
+  application:
+     name: gateway-service  # Service registers under this name
+
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+
+# HTTP Server
+server:
+  port: 2222   # HTTP (Tomcat) port
+
+  zuul:
+    routes:
+      products: /products/**
+
+      ribbon:
+        eureka:
+          enabled: false
